@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@color/theme_col"
+        android:padding="0dp" >
+
+        <TextView
+            android:id="@+id/tv_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/location"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_menu_item"
+            android:text="@string/back"
+            android:textSize="16sp"
+            android:textColor="@drawable/text_col_w_g" />
+        <!-- <Button
+            android:id="@+id/btn_right"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_menu_item"
+            android:text="@string/refresh"
+            android:textSize="16sp"
+            android:textColor="@drawable/text_col_w_g" /> -->
+    </RelativeLayout>
+    
+	<com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_title" />
+	 
+	<RelativeLayout 
+	    android:id="@+id/rl_bottom"
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_title"
+        android:background="@color/t_grey">
+        <ImageView 
+            android:id="@+id/iv_Location_stype"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_centerVertical="true"
+        	android:layout_margin="10dp"/>
+        
+	    <TextView 
+            android:id="@+id/tv_adress"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_toRightOf="@+id/iv_Location_stype"
+        	android:layout_centerVertical="true"
+        	android:textColor="@color/white"
+        	android:text="@string/no_result"/>
+	</RelativeLayout>
+	<CheckBox 
+	    android:id="@+id/cb_layers"
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:checked="false"
+        android:layout_below="@id/rl_bottom"
+        android:button="@drawable/bg_cb_layers"/>
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_bottom"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+	    <Button
+	        android:id="@+id/btn_amplification"
+	        android:layout_width="40dp"
+        	android:layout_height="50dp"
+        	android:background="@drawable/zoom_amplification"/>
+	    <Button
+	        android:id="@+id/btn_shrink"
+	        android:layout_width="40dp"
+        	android:layout_height="50dp"
+        	android:background="@drawable/zoom_shrink"/>
+	    <Button
+	        android:id="@+id/btn_refresh"
+	        android:layout_width="50dp"
+        	android:layout_height="50dp"
+        	android:layout_marginTop="10dp"
+        	android:background="@drawable/refresh_location"/>
+	</LinearLayout>
+</RelativeLayout>

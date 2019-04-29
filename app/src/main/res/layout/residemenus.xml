@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+
+    <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_menu"
+            />
+
+    <ImageView
+            android:id="@+id/iv_shadow"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/shadow"
+            android:scaleType="fitXY"/>
+
+    <LinearLayout
+            android:id="@+id/sv_left_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+
+            <FrameLayout
+                    android:id="@+id/fl_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="15dp"
+                    android:layout_centerHorizontal="true"
+                    >
+
+                <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_oval"
+                        />
+                <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_oval_white"
+                        />
+
+                <vip.inteltech.gat.viewutils.CircularImageView
+                        android:id="@+id/iv_head"
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"
+                        android:src="@drawable/add_watch"/>
+
+                <Button
+                        android:id="@+id/btn_add"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/add_watch"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="bottom|right"
+                        android:textSize="@dimen/textSize_normal"/>
+
+            </FrameLayout>
+
+            <TextView
+                    android:id="@+id/tv_change_watch"
+                    android:layout_below="@id/fl_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:textColor="#eeeeee"
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="@string/change_watch"
+                    />
+        </RelativeLayout>
+
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_t"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        <ScrollView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:paddingLeft="30dp"
+                android:scrollbars="none">
+
+            <LinearLayout
+                    android:id="@+id/layout_left_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:id="@+id/ll_babyinfo"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/babyinfo"
+                            />
+
+                    <TextView
+                            style="@style/left_menu_txt"
+                            android:text="@string/babyinfo"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_watch_setting"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/watch_setting"/>
+
+                    <TextView
+                            android:id="@+id/tv_watch_setting"
+                            style="@style/left_menu_txt"
+                            android:text="@string/watch_setting"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_about_watch"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/about_watch"/>
+
+                    <TextView
+                            android:id="@+id/tv_about_watch"
+                            style="@style/left_menu_txt"
+                            android:text="@string/about_watch"
+                            />
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/white_t"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                        android:id="@+id/ll_address_book"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/mail_list"/>
+
+                    <TextView
+                            style="@style/left_menu_txt"
+                            android:text="@string/mail_list"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_friend_list"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/friend_list"/>
+
+                    <TextView
+                            style="@style/left_menu_txt"
+                            android:text="@string/friend_list"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_watch_fare"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            android:id="@+id/iv_icon"
+                            style="@style/left_menu_img"
+                            android:background="@drawable/watch_fare"/>
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/tv_watch_fare"
+                                style="@style/left_menu_txt"
+                                android:text="@string/watch_fare"
+                                />
+
+                        <ImageView
+                                android:id="@+id/iv_unRead_watch_fare"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="10dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/red_point"
+                                android:visibility="invisible"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_fence"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:layout_marginStart="-3dp"
+                            android:background="@drawable/fence"/>
+
+                    <TextView
+                            style="@style/left_menu_txt"
+                            android:text="@string/electronic_fence"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_history_track"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/history_track"/>
+
+                    <TextView
+                            style="@style/left_menu_txt"
+                            android:text="@string/history_track"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_health"
+                        style="@style/left_menu_layout"
+                        android:visibility="gone"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/health_manage"
+                            android:id="@+id/imageView2"/>
+
+                    <TextView
+                            style="@style/left_menu_txt"
+                            android:text="@string/health_manage"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_album"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/watch_album"/>
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/tv_watch_album"
+                                style="@style/left_menu_txt"
+                                android:text="@string/watch_album"
+                                />
+
+                        <ImageView
+                                android:id="@+id/iv_unRead_album"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="10dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/red_point"
+                                android:visibility="invisible"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/white_t"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                        android:id="@+id/ll_problem_feedback"
+                        style="@style/left_menu_layout"
+                        android:visibility="gone">
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/problem_feedback"/>
+
+                    <TextView
+                            style="@style/left_menu_txt"
+                            android:text="@string/problem_feedback"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll_setting"
+                        style="@style/left_menu_layout"
+                        >
+
+                    <ImageView
+                            style="@style/left_menu_img"
+                            android:background="@drawable/setting"
+                            android:id="@+id/imageView"/>
+
+                    <TextView
+                            style="@style/left_menu_txt"
+                            android:text="@string/APP_setting"
+                            />
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/sv_right_menu"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:paddingRight="30dp"
+            android:scrollbars="none">
+
+        <LinearLayout
+                android:id="@+id/layout_right_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right|center_horizontal"
+                android:orientation="vertical">
+        </LinearLayout>
+    </LinearLayout>
+
+</merge>

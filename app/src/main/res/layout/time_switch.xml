@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@color/theme_col"
+        android:padding="0dp" >
+
+        <TextView
+            android:id="@+id/textView_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/time_turn_watch"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_bigger" />
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_menu_item"
+            android:text="@string/back"
+            android:textColor="@drawable/text_col_w_g"
+            android:textSize="@dimen/textSize_normal" />
+    </RelativeLayout>
+	<LinearLayout 
+	    android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_item">
+        <Button 
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+       		android:layout_height="40dp"
+       		android:layout_margin="10dp"
+       		android:textColor="@color/white"
+       		android:background="@drawable/bg_btn_purple"
+       		android:textSize="@dimen/textSize_normal"
+       		android:text="@string/save"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_title"
+        android:layout_above="@id/ll_bottom"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tv_time_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/turn_on_time"
+                    android:textSize="@dimen/textSize_normal" />
+
+                <Button
+                    android:id="@+id/btn_time_on"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_white"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="00:00" />
+
+            </RelativeLayout>
+            <View 
+			    android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tv_time_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/turn_off_time"
+                    android:textSize="@dimen/textSize_normal" />
+
+                <Button
+                    android:id="@+id/btn_time_off"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_white"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="00:00" />
+
+            </RelativeLayout>
+            <View 
+			    android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

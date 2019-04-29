@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Class name of game entry -->
+    <string name="hm360_splash_success">vip.inteltech.gat.Loading</string>
+    <string name="hm360_splash_fail">vip.inteltech.gat.Loading</string>
+</resources>

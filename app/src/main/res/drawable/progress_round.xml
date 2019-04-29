@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<animation-list 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:oneshot="false"> 
+    <item android:drawable="@drawable/progress_a" android:duration="200"/> 
+    <item android:drawable="@drawable/progress_b" android:duration="200"/> 
+    <item android:drawable="@drawable/progress_c" android:duration="200"/> 
+    <item android:drawable="@drawable/progress_d" android:duration="200"/> 
+    <item android:drawable="@drawable/progress_e" android:duration="200"/> 
+    <item android:drawable="@drawable/progress_f" android:duration="200"/> 
+    <item android:drawable="@drawable/progress_g" android:duration="200"/> 
+    <item android:drawable="@drawable/progress_h" android:duration="200"/> 
+</animation-list>

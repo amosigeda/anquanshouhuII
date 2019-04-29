@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@drawable/bg_item"
+    android:descendantFocusability="blocksDescendants" >
+
+	<ImageView 
+	    android:id="@+id/iv_a"
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/fence_head"/>
+   
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_a"
+        android:layout_marginLeft="10dp"
+        android:text="188"
+        android:textColor="@color/text_col"
+        android:textSize="@dimen/textSize_big" />
+	<TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_a"
+        android:layout_below="@id/tv_name"
+        android:layout_marginLeft="10dp"
+        android:text="进出"
+        android:textColor="@color/text_col"
+        android:textSize="@dimen/textSize_small" />
+    <TextView
+        android:id="@+id/iv_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:textSize="@dimen/textSize_normal"
+        android:text="..." />
+</RelativeLayout>

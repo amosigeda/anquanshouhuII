@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_item"
+                android:descendantFocusability="blocksDescendants">
+
+    <LinearLayout
+            android:id="@+id/ll_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/shape_comm_bg"/>
+
+            <vip.inteltech.gat.viewutils.CircularImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/head_empty"
+                    />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/ll_a"
+            android:text=""
+            android:textColor="@color/text_col"
+            android:textSize="@dimen/textSize_small"/>
+
+    <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/watch_select"/>
+
+</RelativeLayout>

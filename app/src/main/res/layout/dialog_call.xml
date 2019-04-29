@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="5dip" >
+
+    <Button
+        android:id="@+id/btn_watch_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_white"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/watch_no"
+        android:textSize="@dimen/textSize_normal" />
+
+
+    <Button
+        android:id="@+id/btn_cornet_family"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Dialog_Button"
+        android:background="@drawable/bg_btn_white"
+        android:layout_marginTop="2dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/cornet_family"
+        android:textSize="@dimen/textSize_normal" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Dialog_Button"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_btn_purple"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/cancel"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_normal" />
+
+</LinearLayout>

@@ -1,0 +1,255 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion project.ANDROID_BUILD_SDK_VERSION as Integer
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    publishNonDefault true
+
+    def archivesBaseName = "KBB"
+    compileOptions {
+        encoding "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        applicationId "vip.inteltech.coolbaby"
+        versionCode project.VERSION_CODE as int
+        versionName project.VERSION_NAME
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION
+        def buildDate = new Date().format("yyyy-MM-dd HH:mm:ss")
+        buildConfigField "String", "BUILD_DATE", "\"" + buildDate.toString() + "\""
+        multiDexEnabled = true
+    }
+    signingConfigs {
+//        release
+//        debug
+//        releaseETO {
+//
+//            keyAlias 'Etobao'
+//            keyPassword 'Etobao2017*#'
+//            storeFile file('../etobao.keystore')
+//            storePassword 'Etobao2017*#'
+//
+//        }
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/src', 'src/main/src_third']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+            jniLibs.srcDirs = ['src/main/libs']
+        }
+        /*SmartAngel {
+            res.srcDirs = ['src/SmartAngel/res']
+            assets.srcDirs = ['src/SmartAngel/assets']
+        }
+        ETOBAO {
+            res.srcDirs = ['src/ETOBAO/res']
+            assets.srcDirs = ['src/ETOBAO/assets']
+        }*/
+        SecurityPartner {
+            res.srcDirs = ['src/SecurityPartner/res']
+            assets.srcDirs = ['src/SecurityPartner/assets']
+        }
+    }
+    def propFile = file('../signing.properties')
+    print(propFile.absolutePath);
+    if (propFile.canRead()) {
+        println "\nLoad signingConfigs form signing.properties"
+        Properties p = new Properties()
+        p.load(new FileInputStream(propFile))
+        if (p != null
+//                && p.containsKey('KEY_STORE_FILE')
+//                && p.containsKey('KEY_STORE_PASSWORD')
+//                && p.containsKey('KEY_ALIAS')
+//                && p.containsKey('KEY_PASSWORD')
+        ) {
+            android {
+                signingConfigs {
+                    release {
+                        storeFile file(System.properties['user.home'] + p['KEY_STORE_FILE'])
+                        storePassword p['KEY_STORE_PASSWORD']
+                        keyAlias p['KEY_ALIAS']
+                        keyPassword p['KEY_PASSWORD']
+                    }
+                    releaseETO {
+                        storeFile file(System.properties['user.home'] + p['KEY_STORE_FILE_ETO'])
+                        storePassword p['KEY_STORE_PASSWORD_ETO']
+                        keyAlias p['KEY_ALIAS_ETO']
+                        keyPassword p['KEY_PASSWORD_ETO']
+                    }
+                }
+            }
+        }
+
+    } else {
+        println "\nsigningConfigs: Required properties in System Environment variables or signing.properties are missing"
+    }
+
+    def runTasks = gradle.startParameter.taskNames
+    if ('b' in runTasks || 'build' in runTasks) {
+        applicationVariants.all { variant ->
+            variant.outputs.all {
+                if (outputFileName != null && outputFileName.endsWith('.apk')) {
+                    StringBuilder sb = new StringBuilder("../");
+                    if (variant.name.length() > 1) {
+                        sb.append(Character.toUpperCase(variant.name.charAt(0))).append(variant.name.substring(1).replace("Release", "").replace("Debug", "_Debug"));
+                    }
+                    outputFileName = sb.append(".apk").toString()
+                }
+            }
+        }
+    }
+    lintOptions {
+        quiet true
+        checkReleaseBuilds true
+        disable 'MissingTranslation'
+//        abortOnError false
+        ignoreWarnings true
+    }
+
+    flavorDimensions "COMM"
+    productFlavors {
+        /*ETOBAO {
+            archivesBaseName = "ETOBAO"
+            applicationId "com.etobaogroup.etobao"
+            dimension "COMM"
+
+            buildConfigField("String", "APP_NAME", '"etobao"');
+            buildConfigField("String", "BUGLY_APPID", '"9cd81b2523"');
+            buildConfigField("String", "SERVER_URL", '"https://www.etobaogroup.com:6699/Client"');
+            buildConfigField("String", "SERVER_URL_IMAGEVIEW", '"https://www.etobaogroup.com:6700/IFile/GetImage?path="');
+            buildConfigField("String", "SERVER_URL_VOICE", '"https://www.etobaogroup.com:6700/IFile/GetAMR?path="');
+            buildConfigField("String", "CFG_PUBLIC_KEY", '"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUMc5EBbl0ZDj3jqPPSPDfFAa8Ce1i1njTuQMDFLB9+QVN4fwRQHmFRSMBTxQKwnFLExLiIASapfMG3g8dmCqCD90uf9jkG5vcBSu7fFOdurLZVn9zTeSolIdylvsU7eJzb1qQkf1CPDdUWSm7+zzd5kFIQDL4baHoINc3KXqGrwIDAQAB"');
+            manifestPlaceholders = [
+                    AMAP_API_KEY: "507258dc94083ee70ace0c910df53f34",
+                    GMAP_API_KEY: "AIzaSyA9lIb1Jr7aEI0N3IYEZ8u_1ryuVTgEMgc"
+            ]
+            ndk {
+                abiFilters "armeabi"
+                abiFilters "x86"
+            }
+        }
+        SmartAngel {
+            archivesBaseName = "SmartAngel"
+            applicationId "com.etobaogroup.etobao.sp"
+            dimension "COMM"
+
+            buildConfigField("String", "APP_NAME", '"SmartAngel"');
+            buildConfigField("String", "BUGLY_APPID", '"9cd81b2523"');
+            buildConfigField("String", "SERVER_URL", '"https://www.etobaogroup.com:6699/Client"');
+            buildConfigField("String", "SERVER_URL_IMAGEVIEW", '"https://www.etobaogroup.com:6700/IFile/GetImage?path="');
+            buildConfigField("String", "SERVER_URL_VOICE", '"https://www.etobaogroup.com:6700/IFile/GetAMR?path="');
+            buildConfigField("String", "CFG_PUBLIC_KEY", '"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUMc5EBbl0ZDj3jqPPSPDfFAa8Ce1i1njTuQMDFLB9+QVN4fwRQHmFRSMBTxQKwnFLExLiIASapfMG3g8dmCqCD90uf9jkG5vcBSu7fFOdurLZVn9zTeSolIdylvsU7eJzb1qQkf1CPDdUWSm7+zzd5kFIQDL4baHoINc3KXqGrwIDAQAB"');
+            manifestPlaceholders = [
+                    AMAP_API_KEY: "37f75f6b9db04a9298bff905699684c7",
+                    GMAP_API_KEY: "AIzaSyA9lIb1Jr7aEI0N3IYEZ8u_1ryuVTgEMgc"
+            ]
+            ndk {
+                abiFilters "armeabi"
+                abiFilters "x86"
+            }
+        }*/
+        SecurityPartner {
+            archivesBaseName = "SecurityPartner"
+            applicationId "com.etobaogroup.etobao.spp"
+//            applicationId "vip.inteltech.coolbaby"
+            dimension "COMM"
+
+            buildConfigField("String", "APP_NAME", '"SecurityPartner"');
+            buildConfigField("String", "BUGLY_APPID", '"9cd81b2523"');
+            buildConfigField("boolean", "SHOW_ADS", 'true');
+            buildConfigField("String", "SERVER_URL", '"https://www.etobaogroup.com:6699,https://www.etobaogroup.com:6699/Client,https://www.etobaogroup.com:6700/IFile/GetImage?path=,https://www.etobaogroup.com:6700/IFile/GetAMR?path="');
+            buildConfigField("String", "SERVER_URL_BAK", '"http://www.etobaogroup.com:6698,http://www.etobaogroup.com:6698/Client,http://www.etobaogroup.com:6701/IFile/GetImage?path=,http://www.etobaogroup.com:6701/IFile/GetAMR?path="');
+            buildConfigField("String", "CFG_PUBLIC_KEY", '"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUMc5EBbl0ZDj3jqPPSPDfFAa8Ce1i1njTuQMDFLB9+QVN4fwRQHmFRSMBTxQKwnFLExLiIASapfMG3g8dmCqCD90uf9jkG5vcBSu7fFOdurLZVn9zTeSolIdylvsU7eJzb1qQkf1CPDdUWSm7+zzd5kFIQDL4baHoINc3KXqGrwIDAQAB"');
+            manifestPlaceholders = [
+                    AMAP_API_KEY: "a83e2c13ddf118424d1557fa695f2ea9", //coolbaby : 103e53164604629bb01ce278e5ef5130 //c8f929c0a097d876e821f3bb9b00b9a7 //spp:a83e2c13ddf118424d1557fa695f2ea9
+                    GMAP_API_KEY: "AIzaSyA9lIb1Jr7aEI0N3IYEZ8u_1ryuVTgEMgc"
+            ]
+            ndk {
+                abiFilters "armeabi"
+                abiFilters "x86"
+            }
+
+//            signingConfigs {
+//                releaseETO {
+//
+//                    keyAlias 'Etobao'
+//                    keyPassword 'Etobao2017*#'
+//                    storeFile file('../etobao.keystore')
+//                    storePassword 'Etobao2017*#'
+//                }
+//            }
+        }
+    }
+
+    buildTypes {
+        release {
+//            productFlavors.KBB.signingConfig signingConfigs.release
+            //productFlavors.SmartAngel.signingConfig signingConfigs.releaseETO
+            //productFlavors.ETOBAO.signingConfig signingConfigs.releaseETO
+            productFlavors.SecurityPartner.signingConfig signingConfigs.releaseETO
+
+//            signingConfig signingConfigs.config
+
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), "proguard-rules.pro"
+        }
+
+//        debug {
+////            signingConfig signingConfigs.config
+//            productFlavors.SecurityPartner.signingConfig signingConfigs.releaseETO
+//            minifyEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), "proguard-rules.pro"
+//        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'src/main/libs')
+    implementation fileTree(include: ['*.aar'], dir: 'src/main/libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.android.support:support-v4:' + project.ANDROID_SUPPORT_VERSION
+    implementation 'com.android.support:support-v13:' + project.ANDROID_SUPPORT_VERSION
+    implementation 'com.android.support:appcompat-v7:' + project.ANDROID_SUPPORT_VERSION
+    implementation 'com.android.support:percent:' + project.ANDROID_SUPPORT_VERSION
+    implementation 'com.android.support:design:' + project.ANDROID_SUPPORT_VERSION
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.amap.api:3dmap:5.6.0'
+    implementation 'com.amap.api:location:3.5.0'
+    implementation 'com.amap.api:search:5.7.0'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'org.simple:androideventbus:1.0.5.1'
+    implementation 'org.xutils:xutils:3.5.0'
+    implementation 'com.google.zxing:core:3.3.2'
+    implementation 'com.alibaba:fastjson:1.1.70.android'
+    implementation 'org.jsoup:jsoup:1.11.2'
+    implementation 'org.apache.commons:commons-lang3:3.7'
+    implementation 'com.tencent.bugly:crashreport:2.6.5'
+    implementation 'com.tencent.bugly:nativecrashreport:3.3.1'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.github.sd6352051:NiftyDialogEffects:v1.0.3'
+    implementation 'com.annimon:stream:1.1.8'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.8'
+    implementation 'com.ycjiang:VideoPlayModule-Lite:2.1.41'
+    implementation 'com.github.vondear.RxTool:RxKit:v2.2.7'
+    implementation 'com.github.Creky:PermissionGrantor:1.0'
+    implementation 'com.github.Creky:uCrop:2.2.3'
+    implementation('com.squareup.okhttp3:okhttp:3.11.0') {
+        force = true
+    }
+    implementation files('src/main/libs/inapp_1.4.7_v2017_b1021_03221458.jar')
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    annotationProcessor "com.github.bumptech.glide:compiler:4.6.1"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_list_item"
+    android:descendantFocusability="blocksDescendants" >
+	<Button 
+        android:id="@+id/btn_del"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp" 
+        android:layout_marginRight="10dp" 
+        android:visibility="visible"
+        android:background="@drawable/bg_btn_red_circular"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_normal"
+        android:text="@string/del"/>
+    <LinearLayout
+        android:id="@+id/ll_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_del" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/question"
+            android:textSize="@dimen/textSize_normal"
+            android:textColor="@color/red" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/mh"
+            android:textSize="@dimen/textSize_normal"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textSize="@dimen/textSize_normal" />
+    </LinearLayout>
+	 <TextView 
+	        android:id="@+id/tv_createtime"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_below="@id/ll_a"
+        	 android:layout_marginRight="10dp"
+        	 android:layout_marginTop="5dp"
+        	android:layout_alignParentRight="true"
+        	android:textColor="@color/text_col"
+        	android:textSize="@dimen/textSize_normal"
+        	android:text="2005年01月20日"/>
+	 <LinearLayout
+        android:id="@+id/ll_b"
+        android:layout_below="@id/tv_createtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/answer"
+            android:textSize="@dimen/textSize_normal"
+            android:textColor="@color/green" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/mh"
+            android:textSize="@dimen/textSize_normal"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:id="@+id/tv_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textSize="@dimen/textSize_normal" />
+    </LinearLayout>
+	 <TextView 
+	        android:id="@+id/tv_handletime"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_below="@id/ll_b"
+        	 android:layout_marginRight="10dp"
+        	 android:layout_marginTop="5dp"
+        	android:layout_alignParentRight="true"
+        	android:textColor="@color/text_col"
+        	android:textSize="@dimen/textSize_normal"
+        	android:text=""/>
+	 
+	 <View 
+	     android:layout_width="match_parent"
+        	android:layout_height="0.5dp"
+        	android:layout_alignParentBottom="true"
+        	android:background="@color/grey"/>
+</RelativeLayout>

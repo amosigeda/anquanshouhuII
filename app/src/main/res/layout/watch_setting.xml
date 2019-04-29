@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@color/theme_col"
+        android:padding="0dp" >
+
+        <TextView
+            android:id="@+id/textView_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/watch_setting"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_bigger" />
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_menu_item"
+            android:text="@string/back"
+            android:textColor="@drawable/text_col_w_g"
+            android:textSize="@dimen/textSize_normal"/>
+    </RelativeLayout>
+	<LinearLayout 
+	    android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_item">
+        <Button 
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+       		android:layout_height="40dp"
+       		android:layout_margin="10dp"
+       		android:textColor="@color/white"
+       		android:visibility="gone"
+       		android:background="@drawable/bg_btn_purple"
+       		android:textSize="@dimen/textSize_normal"
+       		android:text="@string/save"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_title"
+        android:layout_above="@id/ll_bottom"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/t_red"
+                android:gravity="center_vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/hint_icon" />
+
+                <TextView
+                    android:id="@+id/tv_setting_ps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/watch_setting_PS"
+                    android:textColor="@color/text_col"
+                    android:textSize="@dimen/textSize_normal" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/bg_color"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="@string/personal_talk"
+                android:textColor="@color/text_col" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/automatic_answer"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <CheckBox
+                    android:id="@+id/cb_automatic_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+            </RelativeLayout>
+            <View 
+			    android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/report_call_location"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <CheckBox
+                    android:id="@+id/cb_report_call_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_somatosensory_answer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/somatosensory_answer"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <CheckBox
+                    android:id="@+id/cb_somatosensory_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/reserved_power"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <CheckBox
+                    android:id="@+id/cb_reserved_power"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/sos_message"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <CheckBox
+                    android:id="@+id/cb_sos_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/bg_color"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="@string/remote_control"
+                android:textSize="@dimen/textSize_normal"
+                android:textColor="@color/text_col" />
+             <RelativeLayout
+                android:id="@+id/rl_class_disabled"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+                <CheckBox
+                    android:id="@+id/cb_class_disabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+				<LinearLayout 
+				    android:id="@+id/ll_class_disabled"
+				    android:layout_toLeftOf="@id/cb_class_disabled"
+				    android:layout_width="match_parent"
+                	android:layout_height="match_parent"
+                	android:gravity="center_vertical"
+                	android:layout_marginRight="12dp"
+                	android:background="@drawable/bg_item"
+                	android:orientation="vertical">
+				    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/class_disabled"
+                    android:textSize="@dimen/textSize_normal"/>
+                <TextView
+                    android:id="@+id/tv_class_disable_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="07:17-11:30,14:00-16:29"
+                    android:textColor="@color/text_col"
+                    android:textSize="@dimen/textSize_small" />
+				</LinearLayout>
+				<View 
+	                android:layout_width="1dp"
+	                android:layout_height="match_parent"
+	                android:layout_toLeftOf="@id/cb_class_disabled"
+	                android:layout_marginRight="10dp"
+	                android:background="@color/bg_color"/>
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+                <CheckBox
+                    android:id="@+id/cb_timing_starting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+				<LinearLayout 
+				    android:id="@+id/ll_timing_starting"
+				    android:layout_toLeftOf="@id/cb_timing_starting"
+				    android:layout_width="match_parent"
+                	android:layout_height="match_parent"
+                	android:gravity="center_vertical"
+                	android:layout_marginRight="12dp"
+                	android:background="@drawable/bg_item"
+                	android:orientation="vertical">
+				    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/timing_starting"
+                    android:textSize="@dimen/textSize_normal"/>
+                <TextView
+                    android:id="@+id/tv_switch_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="开机：11:30,关机：14:00"
+                    android:textColor="@color/text_col"
+                    android:textSize="@dimen/textSize_small" />
+				</LinearLayout>
+				<View 
+	                android:layout_width="1dp"
+	                android:layout_height="match_parent"
+	                android:layout_toLeftOf="@id/cb_timing_starting"
+	                android:layout_marginRight="10dp"
+	                android:background="@color/bg_color"/>
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/refused_stranger"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <CheckBox
+                    android:id="@+id/cb_refused_stranger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/bg_color"/>
+
+            <LinearLayout
+                    android:id="@+id/rl_watch_off_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@drawable/bg_item"
+                        android:gravity="center_vertical">
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentTop="true"
+                            android:background="@color/bg_color"/>
+
+                    <TextView
+                            android:id="@+id/tv_watch_off_alarm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="@string/watch_off_alarm"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/textSize_normal"/>
+
+                    <CheckBox
+                            android:id="@+id/cb_watch_off_alarm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:button="@drawable/bg_turn"/>
+                </RelativeLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/bg_color"
+                        />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/rl_remote_monitoring"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@drawable/bg_item"
+                        android:gravity="center_vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="@string/remote_monitoring"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/textSize_normal"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:textSize="@dimen/textSize_normal"
+                            android:text="..."/>
+                </RelativeLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/bg_color"
+                        android:layout_alignParentBottom="true"
+                        />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_remote_shutdown"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/remote_shutdown"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="..." />
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_timezone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tv_watch_timezone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/watch_timezone"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="..." />
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_language"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tv_watch_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/watch_language"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="..." />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/bg_color"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="@string/sound_display"
+                android:textSize="@dimen/textSize_normal"
+                android:textColor="@color/text_col"/>
+            <RelativeLayout
+                android:id="@+id/rl_bright_time"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/bright_time"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/textSize_normal" 
+                    android:text="..."/>
+                <TextView
+                    android:id="@+id/tv_bright_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/tv_b"
+                    android:layout_marginRight="20dp" 
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="10秒"/>
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_sound_vibrate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/sound_vibrate"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp" 
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="..."/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/bg_color"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="@string/grade_l"
+                android:textSize="@dimen/textSize_normal"
+                android:textColor="@color/text_col"/>
+            <RelativeLayout
+                android:id="@+id/rl_flower"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/flower"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/textSize_normal" 
+                    android:text="..."/>
+                <TextView
+                    android:id="@+id/tv_flower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/tv_f"
+                    android:layout_marginRight="20dp" 
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="@string/flower_count_0"/>
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_alarm_clock"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/alarm_clock"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp" 
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="..."/>
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_remote_reset"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/remote_reset"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="..." />
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_remote_restore"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/remote_restore"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="..." />
+            </RelativeLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_work_mode"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/work_mode"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_w"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/textSize_normal" 
+                    android:text="..."/>
+                <TextView
+                    android:id="@+id/tv_work_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/tv_w"
+                    android:layout_marginRight="20dp" 
+                    android:textSize="@dimen/textSize_normal"
+                    android:text="@string/work_mode_0"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

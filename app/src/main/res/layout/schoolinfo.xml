@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@color/theme_col"
+        android:padding="0dp" >
+
+        <TextView
+            android:id="@+id/textView_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/schoolinfo"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_bigger" />
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_menu_item"
+            android:text="@string/back"
+            android:textColor="@drawable/text_col_w_g"
+            android:textSize="@dimen/textSize_normal" />
+    </RelativeLayout>
+	<LinearLayout 
+	    android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_item">
+        <Button 
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+       		android:layout_height="40dp"
+       		android:layout_margin="10dp"
+       		android:textColor="@color/white"
+       		android:background="@drawable/bg_btn_purple"
+       		android:textSize="@dimen/textSize_normal"
+       		android:text="@string/save"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_title"
+        android:layout_above="@id/ll_bottom"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="80dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tv_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/location"
+                    android:textSize="@dimen/textSize_big" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_a"
+                    android:text="@string/mh"
+                    android:textSize="@dimen/textSize_big" />
+
+                <TextView
+                    android:id="@+id/tv_adress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/tv_a"
+                    android:text="@string/app_name"
+                    android:textColor="@color/text_col"
+                    android:textSize="@dimen/textSize_big" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:text="..."
+                    android:textSize="@dimen/textSize_normal"
+                    android:textColor="@color/text_col" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/bg_color" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tv_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/schooltime"
+                    android:textSize="@dimen/textSize_big" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_b"
+                    android:text="@string/mh"
+                    android:textSize="@dimen/textSize_big" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/tv_b"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/morning"
+                            android:textColor="@color/text_col"
+                            android:textSize="@dimen/textSize_big" />
+
+                        <Button
+                            android:id="@+id/btn_time_a"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_btn_white"
+                            android:textSize="@dimen/textSize_normal"
+                            android:text="00:00" />
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/dark_grey"
+                            android:textColor="@color/text_col" />
+
+                        <Button
+                            android:id="@+id/btn_time_b"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_btn_white"
+                            android:textSize="@dimen/textSize_normal"
+                            android:text="00:00" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/afternoon"
+                            android:textColor="@color/text_col"
+                            android:textSize="@dimen/textSize_big" />
+
+                        <Button
+                            android:id="@+id/btn_time_c"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_btn_white"
+                            android:text="00:00" 
+                            android:textSize="@dimen/textSize_normal"/>
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/dark_grey"
+                            android:textColor="@color/text_col" />
+
+                        <Button
+                            android:id="@+id/btn_time_d"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_btn_white"
+                            android:text="00:00" 
+                            android:textSize="@dimen/textSize_normal"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View 
+			    android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/week" 
+                    android:textSize="@dimen/textSize_big"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <CheckBox
+                        android:id="@+id/cb_sunday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        
+                        android:background="@drawable/bg_cb_withe"
+                        android:button="@null"
+                        android:text="@string/sunday"
+                        android:textSize="@dimen/textSize_normal"
+                        android:textColor="@drawable/text_col_b_w" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <CheckBox
+                        android:id="@+id/cb_monday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cb_withe"
+                        android:button="@null"
+                        android:textSize="@dimen/textSize_normal"
+                        android:text="@string/monday"
+                        android:textColor="@drawable/text_col_b_w" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <CheckBox
+                        android:id="@+id/cb_thesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cb_withe"
+                        android:button="@null"
+                        android:textSize="@dimen/textSize_normal"
+                        android:text="@string/thesday" 
+                        android:textColor="@drawable/text_col_b_w"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <CheckBox
+                        android:id="@+id/cb_wednesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cb_withe"
+                        android:button="@null"
+                        android:textSize="@dimen/textSize_normal"
+                        android:text="@string/wednesday"
+                        android:textColor="@drawable/text_col_b_w" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <CheckBox
+                        android:id="@+id/cb_thursday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cb_withe"
+                        android:button="@null"
+                        android:textSize="@dimen/textSize_normal"
+                        android:text="@string/thursday"
+                        android:textColor="@drawable/text_col_b_w" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <CheckBox
+                        android:id="@+id/cb_friday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cb_withe"
+                        android:button="@null"
+                        android:textSize="@dimen/textSize_normal"
+                        android:text="@string/friday"
+                        android:textColor="@drawable/text_col_b_w" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <CheckBox
+                        android:id="@+id/cb_saturday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cb_withe"
+                        android:button="@null"
+                        android:textSize="@dimen/textSize_normal"
+                        android:gravity="center"
+                        android:text="@string/saturday"
+                        android:textColor="@drawable/text_col_b_w" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View 
+			    android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+        </LinearLayout>
+    </ScrollView>
+	
+</RelativeLayout>

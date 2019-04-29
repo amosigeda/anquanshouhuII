@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_chat" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@color/theme_col"
+        android:padding="0dp" >
+
+        <TextView
+            android:id="@+id/textView_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/chat"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_bigger" />
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_menu_item"
+            android:text="@string/back"
+            android:textColor="@drawable/text_col_w_g"
+            android:textSize="@dimen/textSize_normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_item" >
+
+        <ImageView 
+            android:id="@+id/iv_chat_setmode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/chat_setmode_msg"/>
+
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_chat_setmode" >
+
+	        <vip.inteltech.gat.chatutil.RecordButton
+	            android:id="@+id/btn_record"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_centerHorizontal="true"
+	            android:layout_centerVertical="true"
+	            android:textSize="@dimen/textSize_normal"
+                android:gravity="center"
+	            android:paddingTop="10dp"
+        		android:paddingBottom="10dp"
+        		android:layout_marginTop="5dp" 
+        		android:layout_marginBottom="5dp"
+	            android:background="@drawable/btn_chat" />
+
+	        <Button
+	            android:id="@+id/btn_send"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginRight="10dp"
+	            android:background="@drawable/chat_send"
+	            android:text="@string/send"
+                android:textColor="@drawable/text_col_w_g"
+                android:textSize="@dimen/textSize_normal"
+                android:paddingTop="10dp"
+        		android:paddingBottom="10dp"
+        		android:layout_marginTop="5dp" 
+        		android:layout_marginBottom="5dp"
+                android:visibility="gone" />
+
+	        <EditText
+                android:id="@+id/et_message"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/chat_send_edit_normal"
+                android:layout_toLeftOf="@id/btn_send"
+                android:textSize="@dimen/textSize_normal"
+                android:textColor="@color/text_col"
+                android:visibility="gone" />"
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <vip.inteltech.gat.viewutils.MListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rl"
+        android:layout_below="@id/rl_title"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:dividerHeight="5dp"
+        android:listSelector="#00000000"
+        android:scrollbarStyle="outsideOverlay"
+        android:transcriptMode="normal" />
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="main_state_marginTop">100dp</dimen>
+	<dimen name="main_state_width">210dp</dimen>
+	<dimen name="album_height">300dp</dimen>
+	
+	<dimen name="textSize_smaller">13sp</dimen>
+	<dimen name="textSize_small">14sp</dimen>
+	<dimen name="textSize_normal">16sp</dimen>
+	<dimen name="textSize_big">19sp</dimen>
+	<dimen name="textSize_bigger">21sp</dimen>
+</resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_list_item"
+                android:descendantFocusability="blocksDescendants">
+
+    <LinearLayout
+            android:id="@+id/ll_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            <vip.inteltech.gat.viewutils.CircularImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/head_empty"/>
+
+            <ImageView
+                    android:id="@+id/iv_head1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/head_empty"
+                    android:visibility="gone"
+                    />
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/head_bg"
+                    android:visibility="gone"
+                    />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/ll_a"
+            android:text=""
+            android:textColor="@color/text_col"
+            android:textSize="@dimen/textSize_small"/>
+
+    <Button
+            android:id="@+id/btn_del"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_btn_red"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_normal"
+            android:text="@string/del"/>
+
+    <LinearLayout
+            android:id="@+id/ll_c"
+            android:layout_toRightOf="@id/ll_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/tv_content_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize_big"
+                android:text="dasd"/>
+
+        <TextView
+                android:id="@+id/tv_content_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="80dp"
+                android:textColor="@color/text_col"
+                android:textSize="@dimen/textSize_normal"
+                android:text="ssssssssssssssssssssssssssssssssssssss"/>
+    </LinearLayout>
+
+    <RelativeLayout
+            android:id="@+id/ll_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/btn_del"
+            android:layout_margin="10dp"
+            android:gravity="right"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize_normal"
+                android:text="dsdasdasd"/>
+    </RelativeLayout>
+
+    <ImageView
+            android:id="@+id/iv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/btn_del"
+            android:layout_margin="10dp"
+            android:src="@drawable/watch_select"/>
+</RelativeLayout>

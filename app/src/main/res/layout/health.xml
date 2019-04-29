@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@color/theme_col"
+        android:padding="0dp" >
+
+        <TextView
+            android:id="@+id/textView_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/health_manage"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_bigger" />
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_menu_item"
+            android:text="@string/back"
+            android:textSize="@dimen/textSize_normal"
+            android:textColor="@drawable/text_col_w_g" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_title"
+        android:layout_above="@id/ll_bottom"
+        android:scrollbars="none" >
+
+		<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_pedometer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/pedometer"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal"/>
+
+                <CheckBox
+                    android:id="@+id/cb_pedometer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+            </RelativeLayout>
+            <View 
+			    android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_sleep_detection"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <CheckBox
+                    android:id="@+id/cb_sleep_detection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+
+				<LinearLayout 
+				    android:id="@+id/ll_sleep_detection"
+				    android:layout_toLeftOf="@id/cb_sleep_detection"
+				    android:layout_width="match_parent"
+                	android:layout_height="match_parent"
+                	android:gravity="center_vertical"
+                	android:layout_marginRight="12dp"
+                	android:background="@drawable/bg_item"
+                	android:orientation="vertical">
+				    
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="30dp"
+	                    android:text="@string/sleep_detection"
+	                    android:textSize="@dimen/textSize_normal"/>
+	                <TextView
+	                    android:id="@+id/tv_sleep_detection"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="30dp"
+	                    android:text="00:00-8:00|13:00-14:00"
+	                    android:textColor="@color/text_col"
+	                    android:textSize="@dimen/textSize_small" />
+				</LinearLayout>
+            </RelativeLayout>
+            <View 
+			    android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+            <RelativeLayout
+                android:id="@+id/rl_heart_rate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/bg_item"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/heart_rate"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/textSize_normal" />
+
+                <CheckBox
+                    android:id="@+id/cb_heart_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@drawable/bg_turn" />
+            </RelativeLayout>
+            <View 
+			    android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

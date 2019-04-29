@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:orientation="vertical"
+    android:padding="5dip" >
+	<LinearLayout 
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_centerInParent="true"
+    	android:gravity="center"
+    	android:background="@drawable/bg_dialog"
+    	android:orientation="vertical"
+    	android:layout_margin="10dp">
+	    
+    <TextView 
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/del_contact"
+        android:paddingTop="10dp"
+	    android:paddingBottom="10dp"
+        android:gravity="center"
+        android:textSize="@dimen/textSize_big"/>
+	<View 
+	    android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/theme_col"/>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/sure_del_contact"
+        android:textSize="@dimen/textSize_normal"
+        android:textColor="@color/text_col"/>
+    <View 
+	    android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/theme_col"/>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btn_OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Dialog_Button"
+        android:layout_weight="1"
+        android:background="@drawable/bg_btn_purple"
+        android:layout_margin="10dp"
+        android:text="@string/confirm"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_normal"/>
+	</LinearLayout>
+	</LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp" 
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_sendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_time_grey"
+            android:padding="3dp"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textSize_small" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+        <LinearLayout 
+            android:id="@+id/ll"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentRight="true"
+        	android:gravity="center_horizontal"
+        	android:orientation="vertical">
+            
+		 <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <vip.inteltech.gat.viewutils.CircularImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/contacts_custom_small" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/head_frame" />
+            </RelativeLayout>
+		<TextView 
+		    android:id="@+id/tv_name"
+		    android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:gravity="center_horizontal"
+            android:textColor="@color/text_col"
+            android:textSize="@dimen/textSize_small"
+            android:text=""/>
+        </LinearLayout>
+        <RelativeLayout 
+		    android:id="@+id/rl"
+		    android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/ll"
+            android:layout_marginTop="5dp"
+            android:minWidth="80dp"
+            android:background="@drawable/chatto_bg">
+		    <ImageView 
+		        android:id="@+id/iv_chatcontent"
+		        android:layout_width="20dp"
+		        android:layout_height="20dp"
+		        android:layout_centerVertical="true"
+		        android:layout_alignParentRight="true"
+		        android:src="@drawable/chatto_voice_playing_f3"/>
+		    <TextView 
+		        android:id="@+id/tv_chatcontent"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:textColor="@color/text_col"
+		        android:textSize="@dimen/textSize_normal"
+		        android:text=""
+		        android:visibility="gone"/>"
+		</RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/rl"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="left|center"
+            android:lineSpacingExtra="2dp"
+            android:minHeight="50dp"
+            android:textColor="#ff000000"
+            android:textSize="@dimen/textSize_small" 
+            android:enabled="true"/>
+        <ImageView 
+            android:id="@+id/iv_isRead"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_length"
+            android:src="@drawable/red_point"/>
+    </RelativeLayout>
+
+</LinearLayout>

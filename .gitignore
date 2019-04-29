@@ -1,0 +1,12 @@
+/.svn
+/bin
+/.settings
+/build
+/*/build/
+/.gradle
+/.idea
+/app/build
+/app/bugly
+/signing.properties
+/*.iml
+/app/*.iml
